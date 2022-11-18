@@ -10,6 +10,14 @@
 		<string>Apps</string>
 		<key>NAME</key>
 		<string>Firefox</string>
+		<key>POLICY_CATEGORY</key>
+		<string>Master App Installs</string>
+		<key>POLICY_NAME</key>
+		<string>Firefox install</string>
+		<key>POLICY_TEMPLATE</key>
+		<string>JamfPolicyTemplate.xml</string>
+		<key>UPDATE_PREDICATE</key>
+		<string>pkg_uploaded == False</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.3</string>
@@ -34,6 +42,19 @@
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>predicate</key>
+				<string>%UPDATE_PREDICATE%</string>
+			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+		</dict>
+		</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
 		</dict>
 	</array>
 </dict>
