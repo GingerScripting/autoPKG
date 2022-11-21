@@ -52,7 +52,7 @@
 			<key>Processor</key>
 			<string>StopProcessingIf</string>
 		</dict>
-		</dict>
+		<dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
 		</dict>
